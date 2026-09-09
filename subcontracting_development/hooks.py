@@ -10,6 +10,35 @@ app_license = "mit"
 
 # required_apps = []
 
+doctype_js = {
+    "Work Order": "public/js/work_order.js",
+    "Stock Entry": "public/js/stock_entry_subcontractor_receipt.js"
+
+}
+
+fixtures = [
+    {
+        "dt": "Custom Field",
+        "filters": [
+            ["dt", "=", "Stock Entry"]
+        ]
+    }
+]
+
+doc_events = {
+    "Stock Entry": {
+        "before_validate": [
+            "subcontracting_development.manufacturing.material_transfer_work_order.prepare_material_transfer_for_manufacture",
+            "subcontracting_development.manufacturing.material_transfer_work_order.prepare_subcontractor_receipt_finished_good"
+        ],
+
+        "on_submit":
+            "subcontracting_development.manufacturing.material_transfer_work_order.update_work_order_material_transfer_qty",
+
+        "on_cancel":
+            "subcontracting_development.manufacturing.material_transfer_work_order.update_work_order_material_transfer_qty"
+    }
+}
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
 # 	{
