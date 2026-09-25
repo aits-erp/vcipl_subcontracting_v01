@@ -8,10 +8,20 @@ frappe.ui.form.on("Stock Entry", {
         }
 
         // Finished Good filter
+        // frm.set_query("custom_finished_good", function () {
+        //     return {
+        //         filters: {
+        //             item_group: "Finished Goods",
+        //             disabled: 0,
+        //             is_stock_item: 1
+        //         }
+        //     };
+        // });
+
         frm.set_query("custom_finished_good", function () {
             return {
                 filters: {
-                    item_group: "Finished Goods",
+                    custom_item_type: "Finished Goods",
                     disabled: 0,
                     is_stock_item: 1
                 }
