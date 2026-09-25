@@ -29,7 +29,14 @@ fixtures = [
             ["dt", "=", "Stock Entry Detail"],
             ["fieldname", "=", "custom_challan_no"]
         ]
-    }
+    },
+    {
+    "dt": "Custom Field",
+    "filters": [
+        ["dt", "=", "Work Order"],
+        ["fieldname", "=", "custom_subcontractor"]
+    ]
+}
 ]
 
 doc_events = {
