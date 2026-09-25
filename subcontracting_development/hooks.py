@@ -22,6 +22,13 @@ fixtures = [
         "filters": [
             ["dt", "=", "Stock Entry"]
         ]
+    },
+     {
+        "dt": "Custom Field",
+        "filters": [
+            ["dt", "=", "Stock Entry Detail"],
+            ["fieldname", "=", "custom_challan_no"]
+        ]
     }
 ]
 
